@@ -43,4 +43,13 @@ class TaskController extends Controller
         return redirect('/tasks');
 
     }
+
+    public function edit($id)
+    {
+
+        $task = Task::findOrFail($id);
+
+        return view('tasks.edit', compact('task'));
+
+    }
 }
