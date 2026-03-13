@@ -20,4 +20,18 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
 
     }
+
+    public function store(Request $request)
+    {
+
+        Task::create([
+
+            'title' => $request->title,
+            'description' => $request->description
+
+        ]);
+
+        return redirect('/tasks');
+
+    }
 }
