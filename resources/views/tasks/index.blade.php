@@ -14,7 +14,17 @@ Crear nueva tarea
 
 @foreach($tasks as $task)
 
-<li>{{ $task->title }}</li>
+<li>
+
+{{ $task->title }}
+
+<a href="/tasks/{{ $task->id }}/edit">
+
+Editar
+
+</a>
+
+</li>
 
 @endforeach
 
