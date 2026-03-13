@@ -24,12 +24,21 @@ class TaskController extends Controller
     public function store(Request $request)
     {
 
-        Task::create([
+        /*
+        |--------------------------------------------------------------------------
+        | Validation
+        |--------------------------------------------------------------------------
+        |
+        | Laravel valida los datos antes de guardarlos.
+        |
+        */
 
-            'title' => $request->title,
-            'description' => $request->description
-
+        $validated = $request->validate([
+            'title' => 'required|min:3|max:255',
+            'description' => 'nullable'
         ]);
+
+        Task::create($validated);
 
         return redirect('/tasks');
 
