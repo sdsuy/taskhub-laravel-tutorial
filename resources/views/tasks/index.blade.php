@@ -24,6 +24,23 @@ Editar
 
 </a>
 
+<form
+method="POST"
+action="/tasks/{{ $task->id }}"
+style="display:inline"
+>
+
+@csrf
+@method('DELETE')
+
+<button type="submit">
+
+Eliminar
+
+</button>
+
+</form>
+
 </li>
 
 @endforeach
