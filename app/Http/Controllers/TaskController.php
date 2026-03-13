@@ -52,4 +52,20 @@ class TaskController extends Controller
         return view('tasks.edit', compact('task'));
 
     }
+
+    public function update(Request $request, $id)
+    {
+
+        $task = Task::findOrFail($id);
+
+        $validated = $request->validate([
+            'title' => 'required|min:3|max:255',
+            'description' => 'nullable'
+        ]);
+
+        $task->update($validated);
+
+        return redirect('/tasks');
+
+    }
 }
