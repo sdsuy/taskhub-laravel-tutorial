@@ -18,3 +18,5 @@ Route::get('/tasks', [TaskController::class, 'index']);
 Route::get('/tasks/create', function () {
     return view('tasks.create');
 });
+
+Route::post('/tasks', [TaskController::class, 'store']);
