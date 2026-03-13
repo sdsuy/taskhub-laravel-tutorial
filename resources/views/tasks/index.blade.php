@@ -2,6 +2,12 @@
 
 @section('content')
 
+<a href="/tasks/create">
+Crear nueva tarea
+</a>
+
+<br><br>
+
 <h2>Lista de tareas</h2>
 
 <ul>
